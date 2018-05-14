@@ -1,4 +1,3 @@
-
 package boletin31;
 
 /**
@@ -11,7 +10,18 @@ public class Boletin31 {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        Coche car = new Coche("15478po", "Citroen", "c4");
+        Coche car1 = new Coche("157418LU", "Audi", "A4");
+        Clientes clien = new Clientes();
+        Empleado sec = new Secretario("desp5","652341218", "Pontevedra", "Ana", "Ruiz", "2548967K", "Urzaiz", 1400);
+        Empleado ven = new Vendedor("652341218", "Vigo", 500, car, "Juan", "Sanchez", "2548967K", "Principe", "986542317", 1400);
+        Empleado jef = new JefeZona("esp10", (Secretario) sec,car1, "Juan", "Sanchez", "2548967K", "Principe", "986542317", 2000);
+        sec.incrementarSalario();
+        System.out.println(sec.toString());
+        ven.incrementarSalario();
+        System.out.println(ven.toString());
+        jef.incrementarSalario();
+        System.out.println(jef.toString());
     }
-    
+
 }

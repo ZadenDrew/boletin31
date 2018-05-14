@@ -6,23 +6,23 @@ package boletin31;
  * @author andrea
  */
 public class Coche {
-    private String matricúlaa, marca ,modelo;
+    private String matricula, marca ,modelo;
 
     public Coche() {
     }
 
-    public Coche(String matricúlaa, String marca, String modelo) {
-        this.matricúlaa = matricúlaa;
+    public Coche(String matricula, String marca, String modelo) {
+        this.matricula = matricula;
         this.marca = marca;
         this.modelo = modelo;
     }
 
-    public String getMatricúlaa() {
-        return matricúlaa;
+    public String getMatricula() {
+        return matricula;
     }
 
-    public void setMatricúlaa(String matricúlaa) {
-        this.matricúlaa = matricúlaa;
+    public void setMatricula(String matricla) {
+        this.matricula = matricula;
     }
 
     public String getMarca() {
