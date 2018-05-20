@@ -85,18 +85,14 @@ public abstract class Empleado {
 
     @Override
     public String toString() {
-        return ("nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", direccion=" + direccion + ", telefono=" + telefono + ", antiguidade=" + antiguidade + ", salario=" + salario );
+        return ("nombre=" + nombre + ", apellidos=" + apellidos + ", DNI=" + DNI + ", direccion=" + direccion + ", telefono=" + telefono + ", antiguidade=" + antiguidade + ", salario=" + salario);
     }
 
     public abstract void incrementarSalario();
 
-    public void cambiarSupervisor(Empleado supervisor) {
-        Empleado nuevoSupervisor=new Empleado() {
-            @Override
-            public void incrementarSalario() {
-                throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-            }
-        };
-        this.supervisor = nuevoSupervisor;
+    public abstract void imprimir();
+
+    public void cambiarSupervisor() {
     }
+
 }

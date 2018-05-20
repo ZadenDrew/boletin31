@@ -45,12 +45,18 @@ public class Secretario extends Empleado {
 
     @Override
     public String toString() {
-        return ("Secretario : despacho=" + despacho + ", fax=" + fax + ", incrementoSalario=" + incrementoSalario);
+        return ("Secretario ->  " + super.toString() + "despacho=" + despacho + ", fax=" + fax);
     }
 
     @Override
     public void incrementarSalario() {
-        incrementoSalario = getSalario() + (getSalario() * (float) 0.05);
+        incrementoSalario = (float) (super.getSalario() + (0.05 * super.getAntiguidade()));
+        System.out.println(incrementoSalario + " €");
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println(toString());
     }
 
 }

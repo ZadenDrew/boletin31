@@ -50,4 +50,9 @@ public class Clientes {
         this.telefono = telefono;
     }
 
+    @Override
+    public String toString() {
+        return "Clientes{" + "nombre=" + nombre + ", apellidos=" + apellidos + ", dni=" + dni + ", telefono=" + telefono + '}';
+    }
+
 }

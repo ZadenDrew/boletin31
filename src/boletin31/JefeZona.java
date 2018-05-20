@@ -18,7 +18,7 @@ public class JefeZona extends Empleado {
     public JefeZona() {
     }
 
-    public JefeZona(String despacho, Secretario secretarioJefe,  Coche coche2, String nombre, String apellidos, String DNI, String direccion, String telefono, float salario) {
+    public JefeZona(String despacho, Secretario secretarioJefe, Coche coche2, String nombre, String apellidos, String DNI, String direccion, String telefono, float salario) {
         super(nombre, apellidos, DNI, direccion, telefono, salario);
         this.despacho = despacho;
         this.secretarioJefe = secretarioJefe;
@@ -67,11 +67,33 @@ public class JefeZona extends Empleado {
 
     @Override
     public String toString() {
-        return ("JefeZona : despacho=" + despacho + ", secretarioJefe=" + secretarioJefe + ", listaVendedores=" + listaVendedores + ", incrementoSalario=" + incrementoSalario);
+        return ("JefeZona : " + super.toString() + "despacho=" + despacho + ", secretarioJefe={" + secretarioJefe +"},coche =" + coche2);
     }
 
     @Override
     public void incrementarSalario() {
-        incrementoSalario = getSalario() + (getSalario() * (float) 0.20);
+        incrementoSalario = (float) (super.getSalario() + (0.2 * super.getAntiguidade()));
+        System.out.println(incrementoSalario + " €");
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println(toString());
+    }
+
+    public void cambiarSecretario(Secretario novoSecretario) {
+        secretarioJefe = novoSecretario;
+    }
+
+    public void CambiarCoche(Coche novoCoche) {
+        coche2 = novoCoche;
+    }
+
+    public void altaVendedor(Vendedor novoVendedor) {
+        listaVendedores.add(novoVendedor);
+    }
+
+    public void baixaVendedor(Vendedor borrarVendedor) {
+        listaVendedores.remove(borrarVendedor);
     }
 }

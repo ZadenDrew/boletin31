@@ -21,7 +21,7 @@ public class Coche {
         return matricula;
     }
 
-    public void setMatricula(String matricla) {
+    public void setMatricula(String matricula) {
         this.matricula = matricula;
     }
 
@@ -39,6 +39,11 @@ public class Coche {
 
     public void setModelo(String modelo) {
         this.modelo = modelo;
+    }
+
+    @Override
+    public String toString() {
+        return "Coche{" + "matricula=" + matricula + ", marca=" + marca + ", modelo=" + modelo + '}';
     }
     
 }

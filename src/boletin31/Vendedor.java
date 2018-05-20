@@ -76,15 +76,29 @@ public class Vendedor extends Empleado {
 
     @Override
     public String toString() {
-        return ("Vendedor :  movil=" + movil + ", areaVenda=" + areaVenda + ", comisiones=" + comisiones + ", incrementoSalario=" + incrementoSalario);
+        return ("Vendedor -> " + super.toString() + "Coche=" + coche1 + " movil=" + movil + ", areaVenda=" + areaVenda + ", comisiones=" + comisiones + ", incrementoSalario=" + incrementoSalario);
     }
 
     @Override
     public void incrementarSalario() {
-        incrementoSalario = getSalario() + (getSalario() * (float) 0.10);
+        incrementoSalario = (float) (super.getSalario() + (0.1 * super.getAntiguidade()));
+        System.out.println(incrementoSalario + " €");
+    }
+
+    @Override
+    public void imprimir() {
+        System.out.println(toString());
+    }
+
+    public void altaCliente() {
+        listaClientes.add(new Clientes(JOptionPane.showInputDialog("Introduce nombre: "), JOptionPane.showInputDialog("Introduce apellidos: "), JOptionPane.showInputDialog("Introduce dni: "), JOptionPane.showInputDialog("Introduce apellidos: ")));
+    }
+
+    public void baixaCliente(Clientes cliente) {
+        listaClientes.remove(cliente);
     }
 
     public void cambiarCoche() {
-        setCoche1(new Coche(JOptionPane.showInputDialog("Introduce matricula: "),JOptionPane.showInputDialog("Introduce marca: "),JOptionPane.showInputDialog("Introduce modelo: ")));
+        setCoche1(new Coche(JOptionPane.showInputDialog("Introduce matricula: "), JOptionPane.showInputDialog("Introduce marca: "), JOptionPane.showInputDialog("Introduce modelo: ")));
     }
 }
